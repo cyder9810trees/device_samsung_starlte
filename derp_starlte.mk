@@ -27,13 +27,14 @@ $(call inherit-product, device/samsung/starlte/device.mk)
 # Boot Animation
 TARGET_SCREEN_HEIGHT := 2960
 TARGET_SCREEN_WIDTH := 1440
-TARGET_BOOT_ANIMATION_RES := 1440
 
-## Inherit some common AOSP stuff
-$(call inherit-product, vendor/aosp/config/common_full_phone.mk)
+# Official-ify
+$(call inherit-product, vendor/derp/config/common_full_phone.mk)
+DERP_BUILDTYPE := Official
+USE_LEGACY_BOOTANIMATION := true
 
 ## Device identifier, this must come after all inclusions
-PRODUCT_NAME := aosp_starlte
+PRODUCT_NAME := derp_starlte
 PRODUCT_DEVICE := starlte
 PRODUCT_BRAND := samsung
 PRODUCT_MODEL := SM-G960F
